@@ -1,0 +1,81 @@
+.Search{
+    width: 100%;
+    display: inline-flex;
+    margin: 0;
+
+}
+
+.Search input{
+    font-size: large;
+    padding: 2px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+/* GOOD & GOODS */
+
+.Goods{
+    overflow-y: scroll;
+}
+
+.good{
+    
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(149, 152, 156);
+    padding: 0;
+    background-color: aliceblue;
+}
+.detail-info{
+    margin-top: 50px;
+    margin-right: 10px;
+}
+
+span{
+    font-weight: bold;
+}
+
+#add_btn{
+
+position: fixed;
+bottom: 10%;
+right:10%;
+padding: 20px 25px;
+background-color: #2196F3;
+border-radius: 50%;
+border:none;
+}
+
+
+.Modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fefefe;
+}
+
+.Modal form{
+
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.Fill{
+    margin: 50px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Modal_Btn{
+    display: flex;
+    justify-content: space-between;
+}

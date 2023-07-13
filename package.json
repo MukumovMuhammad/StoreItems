@@ -6,9 +6,6 @@
   "engines": {
     "node": "14.x"
   },
-  "scripts": {
-    "start": "node app.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MukumovMuhammad/StoreItems.git"
@@ -18,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/MukumovMuhammad/StoreItems/issues"
   },
-  "homepage": "https://github.com/MukumovMuhammad/StoreItems#readme"
+  "homepage": "https://github.com/MukumovMuhammad/StoreItems#readme",
+  "start": "node app.js"
 }

@@ -1,11 +1,24 @@
 window.addEventListener("DOMContentLoaded", () => {
     let Goods = document.getElementsByClassName("Goods");
-    let Add_modal = document.getElementsByClassName("Modal");
+    let search_inp = document.getElementById("search_input");
     let add_btn = document.getElementById("add_btn");
+    let L_Data = [];
+    let Products = [];
+
+    // AddModal
+    let Add_modal = document.getElementsByClassName("Modal");
     let cancel_btn = document.getElementById("cancel");
     let create_btn = document.getElementById("create");
-    let search_btn = document.getElementById("search_btn");
-    let search_inp = document.getElementById("search_input");
+    // InfoModal
+    let InfoModal = document.getElementsByClassName("InfoModal");
+    let Back_btn = document.getElementById('back');
+    let info_m_name = document.getElementById('p_m_name');
+    let info_m_price = document.getElementById('p_m_price');
+    let delete_btn = document.getElementById("delete-button");
+
+
+
+
 
 
 
@@ -15,9 +28,13 @@ window.addEventListener("DOMContentLoaded", () => {
         fetch('/data.json')
             .then(response => response.json())
             .then(data => {
+                console.log("------------------");
+                L_Data = data;
+                console.log(L_Data);
+
                 Goods[0].innerHTML = '';
-                for (let good of data.Goods) {
-                    Goods[0].innerHTML += `<div class="good">
+                L_Data.forEach((good, i) => {
+                    Goods[0].innerHTML += `<div class="Product" id="${i}">
                 <div>
                 <h1 class="product_name">${good.name}</h1>
                 <h3 class="product_price">${good.price}c</h3>
@@ -28,15 +45,30 @@ window.addEventListener("DOMContentLoaded", () => {
                     <p> <span>Качесво: </span> ${good.quality}</p>
                 </div>
             </div>`
+                });
 
-                }
+
+                Products = Array.from(document.querySelectorAll('.Product'));
+
+                Products.forEach(product => {
+
+                    product.addEventListener('click', () => {
+
+                        MoreInfo(product.id);
+                    })
+                })
+
 
 
             })
             .catch(error => console.error(error));
     }
 
+
     AddItem();
+
+
+
 
 
 
@@ -63,6 +95,12 @@ window.addEventListener("DOMContentLoaded", () => {
     cancel_btn.addEventListener("click", () => {
         CloseModal();
     })
+
+    Back_btn.addEventListener('click', () => {
+        InfoModal[0].style.display = 'none';
+    })
+
+
 
     create_btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -93,17 +131,21 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             .catch(error => console.error(error));
 
+        document.getElementById("name").value = '';
+        document.getElementById("price").value = '';
+        document.getElementById("pos").value = '';
+        document.getElementById("quality").value = '';
+
     })
 
-    search_inp.onkeyup = function () {
-        fetch('/data.json')
-            .then(response => response.json())
-            .then(data => {
-                let m_searched_Data = search(data.Goods, search_inp.value);
+    search_inp.onkeyup = async function () {
 
-                Goods[0].innerHTML = '';
-                for (let good of m_searched_Data) {
-                    Goods[0].innerHTML += `<div class="good">
+        let inp_value = search(L_Data, search_inp.value);
+
+        Goods[0].innerHTML = '';
+        L_Data.forEach((good, i) => {
+            if (inp_value.includes(good)) {
+                Goods[0].innerHTML += `<div class="Product" id="${i}">
                 <div>
                 <h1 class="product_name">${good.name}</h1>
                 <h3 class="product_price">${good.price}c</h3>
@@ -114,12 +156,18 @@ window.addEventListener("DOMContentLoaded", () => {
                     <p> <span>Качесво: </span> ${good.quality}</p>
                 </div>
             </div>`
+            }
 
-                }
+            Products = Array.from(document.querySelectorAll('.Product'));
 
+            Products.forEach(product => {
 
+                product.addEventListener('click', () => {
+                    MoreInfo(product.id);
+                })
             })
-            .catch(error => console.error(error));
+
+        });
     }
 
 
@@ -139,4 +187,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
         return results;
     }
+
+
+
+    const MoreInfo = (id) => {
+        InfoModal[0].style.display = 'block';
+        info_m_name.innerText = L_Data[id].name;
+        info_m_price.innerText = `${L_Data[id].price}с`;
+
+
+        // Delete button
+
+        delete_btn.addEventListener("click", () => {
+            fetch('/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    d_id: id
+                })
+            })
+                .then(response => response.json())
+                .then(data => { console.log('Response: ', data) })
+                .catch(err => { console.log('Error: ', err) })
+
+            InfoModal[0].style.display = 'none';
+            AddItem();
+        })
+
+
+    }
+
+
+
 })

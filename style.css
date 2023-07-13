@@ -19,13 +19,17 @@
     overflow-y: scroll;
 }
 
-.good{
+.Product{
     
     display: flex;
     justify-content: space-between;
     border: 1px solid rgb(149, 152, 156);
     padding: 0;
     background-color: aliceblue;
+}
+
+.Product_price{
+    font-size: x-large;
 }
 .detail-info{
     margin-top: 50px;
@@ -78,4 +82,19 @@ border:none;
 .Modal_Btn{
     display: flex;
     justify-content: space-between;
+}
+
+
+.InfoModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fefefe;
+
 }

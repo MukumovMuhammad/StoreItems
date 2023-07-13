@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/MukumovMuhammad/StoreItems/issues"
   },
-  "homepage": "https://github.com/MukumovMuhammad/StoreItems#readme"
+  "homepage": "https://github.com/MukumovMuhammad/StoreItems#readme",
+  "start": "node app.js"
 }

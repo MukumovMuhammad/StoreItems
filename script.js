@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     Goods[0].innerHTML += `<div class="Product" id="${i}">
                 <div>
                 <h1 class="product_name">${good.name}</h1>
-                <h3 class="product_price">${good.price}c</h3>
+                <h3 class="product_price">${good.price}</h3>
                 </div>
 
                 <div class="detail-info">
@@ -149,7 +149,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 Goods[0].innerHTML += `<div class="Product" id="${i}">
                 <div>
                 <h1 class="product_name">${good.name}</h1>
-                <h3 class="product_price">${good.price}c</h3>
+                <h3 class="product_price">${good.price}</h3>
                 </div>
 
                 <div class="detail-info">
@@ -194,12 +194,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const MoreInfo = (id) => {
         InfoModal[0].style.display = 'block';
         info_m_name.innerText = L_Data[id].name;
-        info_m_price.innerText = `${L_Data[id].price}с`;
+        info_m_price.innerText = `${L_Data[id].price}`;
 
-
+        console.log(id);
         // Delete button
 
         delete_btn.addEventListener("click", () => {
+            info_m_name.innerText = '';
+            info_m_price.innerText = '';
+            InfoModal[0].style.display = 'none';
             fetch('/delete', {
                 method: 'POST',
                 headers: {
@@ -210,16 +213,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 })
             })
                 .then(response => response.json())
-                .then(data => { console.log('Response: ', data) })
+                .then(data => {
+                    console.log('Response: ', data);
+                    location.reload();
+                })
                 .catch(err => { console.log('Error: ', err) })
-
-            InfoModal[0].style.display = 'none';
-            AddItem();
-        })
-
-
+        });
     }
-
-
-
-})
+});

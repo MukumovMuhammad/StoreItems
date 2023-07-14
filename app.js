@@ -204,7 +204,6 @@ app.post('/addGood', (req, res) => {
 });
 //////////////////// Delete
 app.post('/delete', (req, res) => {
-  console.log('delete~');
   let body = '';
 
   // Collect the data sent in the request body
@@ -238,7 +237,7 @@ app.post('/delete', (req, res) => {
       if (err) throw err;
     });
 
-    console.log('Data deleted successfully!');
+
 
     // Send a response back to the client
     res.setHeader('Content-Type', 'application/json');

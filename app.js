@@ -121,8 +121,8 @@ const PORT = 3000;
 
 
 
-app.get('/', (req, res) => {
-  fs.readFile('index.html', function (err, data) {
+app.get('./', (req, res) => {
+  fs.readFile('./index.html', function (err, data) {
     if (err) console.log(err);
     res.writeHead(200, { 'Content-Type': 'text/html' });
     console.log("HTML edit!!");

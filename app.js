@@ -247,6 +247,6 @@ app.get('/delete', (reg, res) => {
 
 
 
-app.listen(PORT, hostname, () => {
-  console.log(`Server running at http://${hostname}:${PORT}/`);
+app.listen(() => {
+  console.log(`Server running`);
 });

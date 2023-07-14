@@ -4,13 +4,13 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node": "14.x"
+    "node": "17.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MukumovMuhammad/StoreItems.git"
   },
-  "author": "",
+  "author": "MMV",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MukumovMuhammad/StoreItems/issues"

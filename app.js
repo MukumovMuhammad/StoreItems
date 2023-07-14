@@ -2,7 +2,6 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const hostname = 'https://store-item.onrender.com';
 const PORT = 8800;
 
 // const server = http.createServer(function (req, res) {
@@ -121,7 +120,7 @@ const PORT = 8800;
 
 
 
-app.get('./', (req, res) => {
+app.get('/', (req, res) => {
   fs.readFile('./index.html', function (err, data) {
     if (err) console.log(err);
     res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -247,6 +246,6 @@ app.get('/delete', (reg, res) => {
 
 
 
-app.listen(() => {
-  console.log(`Server running`);
+app.listen(PORT, () => {
+  console.log(`Server running at http://hostname:${PORT}/`);
 });

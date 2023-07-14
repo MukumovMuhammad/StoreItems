@@ -2,7 +2,10 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const { Console } = require('console');
 const PORT = 8800;
+
+
 
 // const server = http.createServer(function (req, res) {
 //   // Serve the HTML file
@@ -165,7 +168,7 @@ app.get('/data.json', (req, res) => {
 
 
 /////////////// ADDPRODUCT
-app.get('/addGood', (req, res) => {
+app.post('/addGood', (req, res) => {
   let body = '';
 
   req.on('data', function (chunk) {
@@ -200,7 +203,8 @@ app.get('/addGood', (req, res) => {
 
 });
 //////////////////// Delete
-app.get('/delete', (reg, res) => {
+app.post('/delete', (req, res) => {
+  console.log('delete~');
   let body = '';
 
   // Collect the data sent in the request body

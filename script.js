@@ -126,6 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
         })
             .then(response => response.json())
             .then(data => {
+                console.log("Data was send");
                 AddItem();
                 CloseModal();
             })

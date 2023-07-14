@@ -16,5 +16,8 @@
     "url": "https://github.com/MukumovMuhammad/StoreItems/issues"
   },
   "homepage": "https://github.com/MukumovMuhammad/StoreItems#readme",
-  "start": "node app.js"
+  "start": "node app.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

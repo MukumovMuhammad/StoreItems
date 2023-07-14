@@ -2,8 +2,8 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const hostname = 'localhost';
-const PORT = 3000;
+const hostname = 'https://store-item.onrender.com';
+const PORT = 8800;
 
 // const server = http.createServer(function (req, res) {
 //   // Serve the HTML file

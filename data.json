@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "name": "test",
+        "price": "151",
+        "pos": "ult cd",
+        "quality": "sdvq"
+    },
+    {
+        "name": "MAXSX",
+        "price": "125",
+        "pos": "Somewhere",
+        "quality": "very very good"
+    }
+]

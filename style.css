@@ -1,11 +1,11 @@
-.Search{
+.Search {
     width: 100%;
     display: inline-flex;
     margin: 0;
 
 }
 
-.Search input{
+.Search input {
     font-size: large;
     padding: 3px;
     width: 100%;
@@ -15,11 +15,11 @@
 
 /* GOOD & GOODS */
 
-.Goods{
+.Goods {
     overflow-y: scroll;
 }
 
-.Product{
+.Product {
     display: flex;
     justify-content: space-between;
     border: 1px solid rgb(149, 152, 156);
@@ -27,44 +27,45 @@
     background-color: aliceblue;
 }
 
-.Product_price{
+.Product_price {
     font-size: x-large;
 }
-.detail-info{
+
+.detail-info {
     margin-top: 50px;
     margin-right: 10px;
 }
 
-span{
+span {
     font-weight: bold;
 }
 
-#add_btn{
+#add_btn {
 
-position: fixed;
-bottom: 10%;
-right:10%;
-padding: 20px 25px;
-background-color: #2196F3;
-border-radius: 50%;
-border:none;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    padding: 20px 25px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    border: none;
 }
 
 
-.Modal{
+.Modal {
     display: none;
     position: fixed;
     z-index: 1;
     left: 0;
     right: 0;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(245, 245, 245, 0.5);
 }
 
-.Modal form{
+.Modal form {
     background-color: whitesmoke;
     border: 1px solid black;
     border-radius: 5px;
@@ -74,7 +75,7 @@ border:none;
 }
 
 
-.Fill{
+.Fill {
     width: 100%;
     padding: 0;
     font-size: x-large;
@@ -83,39 +84,63 @@ border:none;
     flex-direction: column;
 }
 
-.Fill label{
+.Fill label {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.Fill label input{
+.Fill label input {
     margin-left: 50px;
 }
 
-.Modal_Btn{
+.Modal_Btn {
     display: flex;
     justify-content: space-between;
 }
 
-.Modal_Btn button{
+.Modal_Btn button {
     border-radius: 5px;
-    border:1px solid;
-    border-color:#0f607b;
-    background-color:#21bff3;
+    border: 1px solid;
+    border-color: #0f607b;
+    background-color: #21bff3;
     font-size: x-large;
 }
 
 
-.InfoModal{
+.InfoModal {
+    padding-top: 10px;
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 0;
     right: 0;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #fefefe;
+    background-color: #d0f4f0;
+    text-align: center;
 
+}
+
+.More-info-Items h1 {
+    font-size: 500%;
+}
+
+.More-info-Items div {
+    margin: 50px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#back {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #0f607b;
+    background-color: #21bff3;
+    font-size: x-large;
 }

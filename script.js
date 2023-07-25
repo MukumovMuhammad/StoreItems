@@ -12,9 +12,14 @@ window.addEventListener("DOMContentLoaded", () => {
     // InfoModal
     let InfoModal = document.getElementsByClassName("InfoModal");
     let Back_btn = document.getElementById('back');
+    let delete_btn = document.getElementById("delete-button");
+
+    // Item
     let info_m_name = document.getElementById('p_m_name');
     let info_m_price = document.getElementById('p_m_price');
-    let delete_btn = document.getElementById("delete-button");
+    let info_m_pos = document.getElementById('p_m_pos');
+    let info_m_quality = document.getElementById('p_m_quality');
+
 
 
 
@@ -195,6 +200,8 @@ window.addEventListener("DOMContentLoaded", () => {
         InfoModal[0].style.display = 'block';
         info_m_name.innerText = L_Data[id].name;
         info_m_price.innerText = `${L_Data[id].price}`;
+        info_m_pos.innerText = L_Data[id].pos;
+        info_m_quality.innerText = L_Data[id].quality;
 
         console.log(id);
         // Delete button

@@ -1,38 +1,39 @@
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>Akram's Store</title>
+    <title> Store's Item</title>
 </head>
+
 <body>
     <form class="Search">
-        <input id="search_input"  type="text" placeholder="поиск" name="search">
+        <input id="search_input" type="text" placeholder="поиск" name="search">
         <!-- <button  id="search_btn">поиск</i></button> -->
-        
+
     </form>
 
     <div class="Goods">
-            
+
     </div>
 
     <button id="add_btn">+</button>
     <div class="Modal">
         <form>
             <div class="Fill">
-                <label for="#name"> Что </label> <input required type="text" id="name" placeholder="названия"> 
+                <label for="#name"> Что: </label> <input required type="text" id="name" placeholder="названия">
                 <br>
-                <label for="#price"> Сколько</label> <input required type="text" id="price" placeholder="Цена">
+                <label for="#price"> Сколько:</label> <input required type="text" id="price" placeholder="Цена">
                 <br>
-                <label for="#pos"> Где :</label> <input required type="text" id="pos" placeholder="позиция"> 
+                <label for="#pos"> Где :</label> <input required type="text" id="pos" placeholder="позиция">
                 <br>
-                <label for="#quality"> Какой : </label> <input required type="text" id="quality" placeholder="Качество"> 
+                <label for="#quality"> Какой : </label> <input required type="text" id="quality" placeholder="Качество">
             </div>
-           
+
             <div class="Modal_Btn">
-                <button type="button"  id="cancel">отмена</button>
+                <button type="button" id="cancel">отмена</button>
                 <button id="create" type="submit">Создать</button>
             </div>
         </form>
@@ -40,13 +41,19 @@
 
 
     <div class="InfoModal">
-        <div class="buttons">
+        <div class="Modal_Btn">
             <button id="edit-button"><i class="fas fa-edit"></i> Изменить</button>
             <button id="delete-button"><i class="fas fa-delete"></i> Удалить</button>
         </div>
-        <h1 id="p_m_name"></h1>
-        <h2 id="p_m_price"></h2>
-        <button type="button"  id="back">Назад</button>
+        <div class="More-info-Items">
+            <h1 id="p_m_name"></h1>
+            <h2 id="p_m_price"></h2>
+            <div>
+                <h2 id="p_m_pos"></h2>
+                <h2 id="p_m_quality"></h2>
+            </div>
+        </div>
+        <button type="button" id="back">Назад</button>
     </div>
 </body>
 
